@@ -12,7 +12,7 @@ pipeline {
     stage ('Copy WAR'){
      steps{
         sh """
-           scp -pr /var/lib/jenkins/workspace/WebappPipeline/target/WebApp.war root@18.222.7.5 /opt/Dockerstuff
+           scp -pr /var/lib/jenkins/workspace/WebappPipeline/target/WebApp.war root@18.222.7.5:/opt/Dockerstuff
            """
         }
     }
