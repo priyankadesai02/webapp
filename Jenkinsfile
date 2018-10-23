@@ -9,5 +9,12 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+    stage ('Copy WAR'){
+     steps{
+        sh """
+           ssh -tt root@18.222.7.5 sudo cp /workspace/WebappPipeline/target/WebApp.war /opt/Dockerstuff
+           """
+        }
+    }
     }
 }
