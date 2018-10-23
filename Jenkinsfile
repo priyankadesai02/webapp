@@ -12,7 +12,7 @@ pipeline {
     stage ('Copy WAR'){
      steps{
         sh """
-           ssh -tt root@18.222.7.5 sudo cp /workspace/WebappPipeline/target/WebApp.war /opt/Dockerstuff
+           ssh -tt root@18.222.7.5 sudo cp /var/lib/jenkins/workspace/WebappPipeline/target/WebApp.war /opt/Dockerstuff
            """
         }
     }
