@@ -1,15 +1,12 @@
-pipeline {
-    agent any
-    tools {
-        maven 'MAVEN_HOME'
-    }
-	stages {
-	stage("build & SonarQube analysis") {
-          node {
+pipeline{
+   agent none
+        stages {
+          stage("build & SonarQube analysis") {
+            agent any
+            steps {
               withSonarQubeEnv('My SonarQube Server') {
-                 sh 'mvn clean package sonar:sonar'
+                sh 'mvn clean package sonar:sonar'
               }
+            }
           }
-}
-}
 }
