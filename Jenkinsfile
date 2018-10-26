@@ -19,7 +19,7 @@ pipeline {
         stage ('Run Ansible playbook'){
 	    steps{
 		sh """
-			ssh -tt root@18.222.7.5 sudo ansible-playbook /opt/AnsibleControl/DockerPlaybook.yml
+			ssh -tt root@172.31.21.154 sudo ansible-playbook /opt/AnsibleControl/DockerPlaybook.yml
                 """
 	    }
        }
